@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A1D3A"
+    tools:context=".pertemuan_2.SecondActivity">
+
+    <!-- Tinkerbell -->
+    <TextView
+        android:id="@+id/tinkerbell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🧚‍♀️"
+        android:textSize="42sp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Bintang kiri -->
+    <TextView
+        android:id="@+id/starLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⭐"
+        android:textSize="26sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Bintang kanan -->
+    <TextView
+        android:id="@+id/starRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⭐"
+        android:textSize="26sp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Judul -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disney App ✨"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Sub Judul -->
+    <TextView
+        android:id="@+id/textWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to the magical world"
+        android:textSize="16sp"
+        android:textColor="#BBD6FF"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/divider"
+        android:layout_width="200dp"
+        android:layout_height="1dp"
+        android:background="#4A6FA5"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/textWelcome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Label Nama -->
+    <TextView
+        android:id="@+id/textNama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masukkan Nama"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Sparkle kiri -->
+    <TextView
+        android:id="@+id/sparkleLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="✨"
+        android:textSize="22sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/textNama"
+        app:layout_constraintEnd_toStartOf="@id/inputNama"
+        app:layout_constraintHorizontal_bias="1"/>
+
+    <!-- Input Nama -->
+    <EditText
+        android:id="@+id/inputNama"
+        android:layout_width="260dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:hint="Nama kamu"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textColorHint="#777777"
+        android:background="#FFFFFF"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@id/textNama"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Sparkle kanan -->
+    <TextView
+        android:id="@+id/sparkleRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="✨"
+        android:textSize="22sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/textNama"
+        app:layout_constraintStart_toEndOf="@id/inputNama"/>
+
+    <!-- Tombol -->
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="210dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="40dp"
+        android:text="Mulai Petualangan ✨"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#1E90FF"
+        app:layout_constraintTop_toBottomOf="@id/inputNama"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Footer -->
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⭐ Dream • Explore • Imagine ⭐"
+        android:textColor="#BBD6FF"
+        android:textSize="14sp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
