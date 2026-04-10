@@ -1,5 +1,6 @@
 package com.example.granddiva_aps.Pertemuan3
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -32,6 +33,9 @@ class ThirdActivity : AppCompatActivity() {
             //Mengambil value dari inputNama dan menampilkan di Logcat
             val Nomor = inputNoTujuan.text
             Toast.makeText(this, "Pesan di Kirim ke Nomor = $Nomor", Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this, ThirdResultActivity::class.java)
+            startActivity(intent)
         }
 
 
@@ -40,3 +44,8 @@ class ThirdActivity : AppCompatActivity() {
 
     }
 }
+
+annotation class ThirdResultActivity(
+    val activity: ThirdActivity,
+    val java: Any
+)
