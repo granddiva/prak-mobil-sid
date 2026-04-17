@@ -1,8 +1,6 @@
-package com.example.granddiva_aps.Pertemuan3
+package com.example.granddiva_aps.pertemuan4
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -11,15 +9,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.granddiva_aps.R
-import com.example.granddiva_aps.databinding.ActivityThirdBinding
+import com.example.granddiva_aps.databinding.ActivityFourthBinding
+import com.example.granddiva_aps.databinding.ActivityMainBinding
 
-class ThirdActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityThirdBinding
+class FourthActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityFourthBinding
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-       binding = ActivityThirdBinding.inflate(layoutInflater)
+        binding = ActivityFourthBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -28,19 +27,7 @@ class ThirdActivity : AppCompatActivity() {
         }
 
 
-        binding.btnKirim.setOnClickListener {
-            //Mengambil value dari inputNama dan menampilkan di Logcat
-            val Nomor = binding.inputNoTujuan.text
-            Toast.makeText(this, "Pesan di Kirim ke Nomor = $Nomor", Toast.LENGTH_SHORT).show()
-
-//            val intent = Intent(this, ThirdResultActivity::class.java)
-//            startActivity(intent)
-        }
-
-
-
-
-
     }
-}
 
+
+}
