@@ -1,51 +1,59 @@
 package com.example.granddiva_aps
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import com.example.granddiva_aps.databinding.ActivityMainBinding
-import com.example.granddiva_aps.databinding.ActivityThirdBinding
-import com.example.granddiva_aps.pertemuan4.FourthActivity
+import com.example.granddiva_aps.more.MoreFragment
+import com.example.granddiva_aps.pertemuan_9.HomeFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            // Sesuaikan padding agar tidak tertutup Bottom Navigation
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
         }
 
-        binding.btnToFourth.setOnClickListener {
-
-            val intent = Intent(this, FourthActivity::class.java)
-            startActivity(intent)
-
-            /*tambahkan bagian berikut*/
-            intent.putExtra("nama", "Politeknik Caltex Riau")
-            intent.putExtra("asal", "Rumbai")
-            intent.putExtra("usia", 20)
-
-            startActivity(intent)
+        // Tampilkan HomeFragment secara default
+        if (savedInstanceState == null) {
+            replaceFragment(HomeFragment())
         }
 
-        binding.btnToNinth.setOnClickListener {
-            val intent = Intent(this, com.example.granddiva_aps.pertemuan_9.NinthActivity::class.java)
-            startActivity(intent)
+        // Setup Bottom Navigation listener
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    replaceFragment(HomeFragment())
+                    true
+                }
+                R.id.nav_message -> {
+                    replaceFragment(MessageFragment())
+                    true
+                }
+                R.id.nav_more -> {
+                    replaceFragment(MoreFragment())
+                    true
+                }
+                else -> false
+            }
         }
-        binding.more.setOnClickListener {
+    }
 
-        }
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
     }
 }
