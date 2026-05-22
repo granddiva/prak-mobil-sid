@@ -40,5 +40,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.btnToNinth.setOnClickListener {
+            val intent = Intent(this, com.example.granddiva_aps.pertemuan_9.NinthActivity::class.java)
+            startActivity(intent)
+        }
+        binding.more.setOnClickListener {
+
+        }
     }
 }

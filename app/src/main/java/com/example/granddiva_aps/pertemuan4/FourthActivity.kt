@@ -3,9 +3,6 @@ package com.example.granddiva_aps.pertemuan4
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -13,7 +10,6 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.granddiva_aps.MainActivity
 import com.example.granddiva_aps.R
 import com.example.granddiva_aps.databinding.ActivityFourthBinding
-import com.example.granddiva_aps.databinding.ActivityMainBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
@@ -37,9 +33,7 @@ class FourthActivity : AppCompatActivity() {
         Log.e("Data Intent","Nama: $name , Usia: $age, Asal: $from")
 
         binding.btnBack.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
            finish()
-
             Log.e("onCreate", "FourthActivity dibuat pertama kali")
         }
 
@@ -66,19 +60,12 @@ class FourthActivity : AppCompatActivity() {
                 .show()
         }
 
-
-
-
-
-
-
+        binding.btnToMore.setOnClickListener {
+            val fragment = com.example.granddiva_aps.more.MoreFragment()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
         }
-
-
     }
-
-
-
-
-
-
+}
