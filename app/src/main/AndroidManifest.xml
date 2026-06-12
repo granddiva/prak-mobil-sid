@@ -13,8 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Granddiva_APS">
-
-
+        <activity
+            android:name=".Note.NoteFormActivity"
+            android:exported="false" />
         <activity
             android:name=".tutorial.TutorialMessageActivity"
             android:exported="false" />

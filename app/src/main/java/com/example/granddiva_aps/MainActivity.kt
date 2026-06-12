@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import com.example.granddiva_aps.Note.NoteFragment
 import com.example.granddiva_aps.databinding.ActivityMainBinding
 import com.example.granddiva_aps.more.MoreFragment
 import com.example.granddiva_aps.pertemuan_9.HomeFragment
@@ -44,6 +45,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.nav_more -> {
                     replaceFragment(MoreFragment())
+                    true
+                }
+                R.id.note -> {
+                    replaceFragment(NoteFragment())
                     true
                 }
                 else -> false
